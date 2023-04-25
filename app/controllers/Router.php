@@ -3,21 +3,62 @@ class Router {
     public $RouterPath;
     public $path;
     public $method;
+    public $callback;
+    public $usePath;
+
     public function __construct()
     {
-        $this->method = $_GET['url'];
-        $this->path = $_GET['url'];
 
-        $this->RouterPath = array(
-            '/' => function(){
-                echo "Home Page";
-            },
-            '/page1' => function(){
-                echo "Page 1";
+       
+    }
+    public function url($method,$path,$callback){
+        
+        $this->callback = $callback;
+        $this->method   = $method;
+        $this->path     = isset($path) ? $path : '';
+
+        if(empty($this->usePath)){
+            return false;
+        }
+            $this->RouterPath = array(
+                $this->method=>array(
+                    $this->path => function(){
+                       include($this->callback);
+                }
+                )
+                
+            );
+            
+            if($this->RouterPath[$this->method][$this->path]){
+                $redirectPath = $this->RouterPath[$this->method][$this->path];
+                $redirectPath();
+            }else{
+                http_response_code(404);
+                return false;
             }
-        );
+            
+            return true;
+            
+    }
+    public function goPath(){
+        
+// new Router("GET","/home","./app/views/homepage.php");
+function goPath($fileName){
+    $pathFull  = $_SERVER['PHP_SELF'];
+    $pathArray = explode("/",$pathFull);
+    $pathPOP   = array_pop($pathArray);
+    $pathPOP2   = array_pop($pathArray);
+    $pathCapsule = __DIR__.$pathFull;
+    $pathRepace = str_replace("\\","/",$pathCapsule);
+    $usePath  = "";
+    $usePath .= "../" .$pathPOP2. "/app/views/";
+    $usePath .= $fileName.".php";
+    return $this->usePath = $usePath;
+}
 
     }
 }
+
+// new Router("GET","/", "../views/homepage.php");
 
 ?>

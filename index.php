@@ -1,7 +1,6 @@
 <?php
-require_once "./config/router.php";
-route('GET', 'http://localhost/application_oop/list', function(){
-    echo '1';
-    include "./get.html";
-});
+require_once "./app/controllers/Router.php";
+
+$new = new Router();
+$new->url("get","/home", goPath('homepage'))
 ?>
