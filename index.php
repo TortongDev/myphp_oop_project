@@ -1,6 +1,5 @@
 <?php
 require_once "./app/controllers/Router.php";
 
-$new = new Router();
-$new->url("get","/home", goPath('homepage'))
+$new = new Router("get","/home", 'homepage');
 ?>

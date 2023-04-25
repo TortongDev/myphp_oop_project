@@ -6,14 +6,19 @@ class Router {
     public $callback;
     public $usePath;
 
-    public function __construct()
+    public function __construct($method,$path,$fileName)
     {
 
-       
-    }
-    public function url($method,$path,$callback){
-        
-        $this->callback = $callback;
+        $pathFull  = $_SERVER['PHP_SELF'];
+        $pathArray = explode("/",$pathFull);
+        $pathPOP   = array_pop($pathArray);
+        $pathPOP2   = array_pop($pathArray);
+        $pathCapsule = __DIR__.$pathFull;
+        $pathRepace = str_replace("\\","/",$pathCapsule);
+        $usePath  = "";
+        $usePath .= "../" .$pathPOP2. "/app/views/";
+        $usePath .= $fileName.".php";
+        $this->usePath = $usePath;
         $this->method   = $method;
         $this->path     = isset($path) ? $path : '';
 
@@ -23,7 +28,7 @@ class Router {
             $this->RouterPath = array(
                 $this->method=>array(
                     $this->path => function(){
-                       include($this->callback);
+                       include($this->usePath);
                 }
                 )
                 
@@ -36,27 +41,17 @@ class Router {
                 http_response_code(404);
                 return false;
             }
-            
+           
             return true;
+    }
+    public function url($method,$path,$callback){
+        
             
     }
-    public function goPath(){
         
 // new Router("GET","/home","./app/views/homepage.php");
-function goPath($fileName){
-    $pathFull  = $_SERVER['PHP_SELF'];
-    $pathArray = explode("/",$pathFull);
-    $pathPOP   = array_pop($pathArray);
-    $pathPOP2   = array_pop($pathArray);
-    $pathCapsule = __DIR__.$pathFull;
-    $pathRepace = str_replace("\\","/",$pathCapsule);
-    $usePath  = "";
-    $usePath .= "../" .$pathPOP2. "/app/views/";
-    $usePath .= $fileName.".php";
-    return $this->usePath = $usePath;
-}
+   
 
-    }
 }
 
 // new Router("GET","/", "../views/homepage.php");
