@@ -16,9 +16,9 @@
         // $namespaces = implode("\\",$loadSubArr);
         foreach($dirFolder as $dirs){
             $pathFile =  $dirs .  DIRECTORY_SEPARATOR . $classname . '.php';
- 
             if(file_exists($pathFile)){
                 require_once $pathFile;
+
             }
         }
     }

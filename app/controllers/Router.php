@@ -16,7 +16,7 @@ class Router {
         $pathCapsule = __DIR__.$pathFull;
         $pathRepace = str_replace("\\","/",$pathCapsule);
         $usePath  = "";
-        $usePath .= "../" .$pathPOP2. "/app/views/";
+        $usePath .= "../../app/views/";
         $usePath .= $fileName.".php";
         $this->usePath = $usePath;
         $this->method   = $method;
