@@ -1,0 +1,27 @@
+.wrapper-about {
+    margin-block: 20px;
+}
+header {
+    height: 70px;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    color: aliceblue;
+}
+.bg-blue {
+    background-color: blue;
+}
+.bg-green {
+    background-color: green;
+}
+.header-start {
+    margin-inline-start: 70px;
+    margin-inline-end: 40px;
+}
+.header-end {
+    margin-inline-start: 40px;
+    margin-inline-end: 70px;
+}

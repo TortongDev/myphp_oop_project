@@ -8,7 +8,10 @@ class templateControllers {
     public function loadPage(){
         if($this->template == 'header'){
             echo<<<HEADER
-                <header>Header</header>
+                <header>
+                    <div class="header-start">Header</div>
+                    <div class="header-end">Header</div>
+                </header>
             HEADER;
 
         }elseif ($this->template == 'footer') {
