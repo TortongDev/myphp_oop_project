@@ -1,4 +1,5 @@
 <?php
 require_once "../../app/controllers/Router.php";
-    $new = new Router("get","/about", 'about');
+    $new = new Router("GET","about", 'about');
+    $new->useRoute();
 ?>

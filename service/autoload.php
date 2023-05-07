@@ -2,13 +2,18 @@
     spl_autoload_register('autoload');
     function autoload($loader){
         $dirFolder  = array(
+            "class",
             "models",
             "controllers",
             "..\models",
             "..\controllers",
             "..\..\models",
+            "..\..\..\models",
             "..\..\controllers",
-            "..\..\config\connection"
+            "..\..\..\controllers",
+            "..\config\connection",
+            "..\..\config\connection",
+            "..\..\..\config\connection"
         );
         $classname = $loader;
         // $loadSubArr = explode("\\",$loader);

@@ -1,6 +1,4 @@
 <?php
-// SELECT * FROM `school_ans`
-require_once "../autoload.php";
 class getSchool {
     public $school_ans_name;
 	public $teacher_ans_id;
