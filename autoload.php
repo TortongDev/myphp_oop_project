@@ -12,7 +12,13 @@
             "..\..\controllers",
             "..\..\..\controllers",
             "..\..\config\connection",
-            "..\..\..\config\connection"
+            "..\..\..\config\connection",
+            '..\..\app\controllers',
+            '..\..\..\app\controllers',
+            '..\app\controllers',
+            '..\app\models',
+            '..\..\app\models',
+            '..\..\..\app\models'
         );
         $classname = $loader;
         // $loadSubArr = explode("\\",$loader);

@@ -20,6 +20,11 @@ class Router {
 
       
     }
+    public function getLink($fileName){
+        $pathFull  = "/TSmartWeb/myphp_oop_project/pageProcess/".$fileName;
+        return $pathFull;
+       
+    }
     public function useRoute(){
         $pathFull  = $_SERVER['PHP_SELF'];
         $pathArray = explode("/",$pathFull);

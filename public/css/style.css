@@ -1,7 +1,15 @@
 html , body {
-    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: silver !important;
 
+}
+.wrapper {
+    margin-inline: 30px;
+    margin-block: 10px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid silver;
+    border-radius: 5px;
 }
