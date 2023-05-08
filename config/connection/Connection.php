@@ -15,7 +15,7 @@
         public $DBNAME      = DBNAME;
         public static $PDO;
         public function __construct(){
-            $this->openConnection();
+            // $this->openConsnection();
         }
         public function openConnection(){
             try {
@@ -30,21 +30,7 @@
             self::$PDO = null;
             exit;
         }
-        public static function selectData($sql,$value){
-            // select statement
-            $select = self::$PDO->prepare($sql);
-            $select->execute($value);
-            return $select->fetchAll();
-        }
-        public static function insertData(){
-            // select statemente
-        }
-        public static function updateData(){
-            // select statement
-        }
-        public static function deleteData(){
-            // select statement
-        }
+   
     }
 
 ?>

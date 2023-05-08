@@ -22,7 +22,7 @@
         <div class="title">
             <h3 class="text-primary">Register : สมัครสมาชิก</h3>
             <form action="">
-                <div class="grid-input-2">
+                <div class="grid-input-3">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" name="USERNAME" id="username" class="form-control">
@@ -36,9 +36,11 @@
                         <input type="text" name="STATUS" id="status" class="form-control">
                     </div>
                 </div>
+                <div class="wrapper-btn">
+                    <button class="btn btn-primary" type="submit" id="saveProcess">บันทึกข้อมูล</button>
+                    <button class="btn btn-warning" type="reset"  id="reset">บันทึกข้อมูล</button>
+                </div>
                 
-                <input type="text" name="" class="form-control">
-                <input type="text" name="STATUS" class="form-control">
             </form>
         </div>
     </div>

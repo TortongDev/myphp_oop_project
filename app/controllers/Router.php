@@ -17,21 +17,23 @@ class Router {
         $usePath .= "../../app/views/";
         $usePath .= $fileName.".php";
         $this->usePath = $usePath;
-
-      
     }
+
     public function getLink($fileName){
         $pathFull  = "/TSmartWeb/myphp_oop_project/pageProcess/".$fileName;
         return $pathFull;
-       
+    }
+    public function getAjaxLink($fileName){
+        $pathFull  = "/TSmartWeb/myphp_oop_project/public/ajax/service/".$fileName.'.php';
+        return $pathFull;
     }
     public function useRoute(){
-        $pathFull  = $_SERVER['PHP_SELF'];
-        $pathArray = explode("/",$pathFull);
-        $pathPOP   = array_pop($pathArray);
-        $pathPOP2   = array_pop($pathArray);
-        $pathCapsule = __DIR__.$pathFull;
-        $pathRepace = str_replace("\\","/",$pathCapsule);
+        $pathFull       = $_SERVER['PHP_SELF'];
+        $pathArray      = explode("/",$pathFull);
+        $pathPOP        = array_pop($pathArray);
+        $pathPOP2       = array_pop($pathArray);
+        $pathCapsule    = __DIR__.$pathFull;
+        $pathRepace     = str_replace("\\","/",$pathCapsule);
         if(empty($this->usePath)){
             return false;
         }

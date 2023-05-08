@@ -18,7 +18,7 @@ class templateControllers extends Router{
                     <li><a href="{$this->getLink("home")}">หน้าแรก</a></li>
                     <li><a href="{$this->getLink("register")}">สมัครสมาชิก</a></li>
                     <li><a href="{$this->getLink("about")}">เกี่ยวกับเรา</a></li>
-                    <li><a href="#">Link1</a></li>
+                    <li><a href="{$this->getLink("contact")}">ติดต่อสอบถาม</a></li>
                     <li><a href="#">Link1</a></li>
                     <li><a href="#">Link1</a></li>
                 </ul>
