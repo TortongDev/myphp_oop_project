@@ -37,13 +37,12 @@ class Router {
         if(empty($this->usePath)){
             return false;
         }
-            
         if($this->method === "GET" || $this->method === "get" || $this->method == "Get"){
             $this->RouterPath = array(
                 $this->method=>array(
                     $this->path => function(){
-                       include($this->usePath);
-                }
+                       include ($this->usePath);
+                    }
                 )
             );
             
@@ -55,16 +54,9 @@ class Router {
                 return false;
             }
         }elseif($this->method === "POST" || $this->method === "post" || $this->method == "Post"){
-            http_response_code(400);
+            http_response_code(500);
         }
         return true;
     }
-        
-// new Router("GET","/home","./app/views/homepage.php");
-   
-
 }
-
-// new Router("GET","/", "../views/homepage.php");
-
 ?>

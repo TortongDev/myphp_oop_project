@@ -17,7 +17,6 @@ class CRUD extends Connection {
         $insert = self::$PDO->prepare($sql);
         $insert->execute($value);
         var_dump($insert);
-        echo 1;
         return $insert;
     }
     public static function updateData(){

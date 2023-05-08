@@ -16,7 +16,6 @@
         $loadpage = new templateControllers("header");
         $loadpage->loadPage(); 
     ?>
-    
     <div class="wrapper">
         <div class="title">
             <h3 class="text-primary">Contact : ติดต่อ / สอบถาม</h3>
@@ -28,7 +27,7 @@
 <script>
         console.log(1);
         $.ajax({
-        url: <?php echo $useRoute->getAjaxLink("insertUsers"); ?>,
+        url: "<?php echo $loadpage->getAjaxLink("insertUsers"); ?>",
         type:'POST',
         data:{},
         success:(data)=>{
