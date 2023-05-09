@@ -1,4 +1,5 @@
 <?php
+require "../../config/setPathRouter/conf.php";
 class Router {
     public $RouterPath;
     public $path;
@@ -20,11 +21,11 @@ class Router {
     }
 
     public function getLink($fileName){
-        $pathFull  = "/TSmartWeb/myphp_oop_project/pageProcess/".$fileName;
+        $pathFull  = PATH_GROUP."pageProcess/".$fileName;
         return $pathFull;
     }
     public function getAjaxLink($fileName){
-        $pathFull  = "/TSmartWeb/myphp_oop_project/public/ajax/service/".$fileName.'.php';
+        $pathFull  = PATH_GROUP."public/ajax/service/".$fileName.'.php';
         return $pathFull;
     }
     public function useRoute(){
