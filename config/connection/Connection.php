@@ -28,7 +28,6 @@
         }
         public function closeConnection(){
             self::$PDO = null;
-            exit;
         }
    
     }
